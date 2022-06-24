@@ -1,0 +1,30 @@
+name: Test actions and scheduleres/triggers  # ${{ github.workflow }}
+on:
+  push:
+
+env:
+  my_fav_ubuntu: "20.04"
+
+jobs:
+  debug_variables:    # Action
+    env:
+      step_lvl_vars: "TEST123"
+    runs-on: ubuntu-20.04
+    steps:
+    - name: check Variables   # steps
+      run: |
+        echo ${{ env.my_fav_ubuntu }}
+        echo ${{ github.repository }}
+        echo ${{ github.workflow }}
+        echo $GITHUB_SHA
+        echo $GITHUB_WORKSPACE
+        echo $GITHUB_REF
+        echo "Debug actor:  $GITHUB_ACTOR"
+        echo "Debug actor:  ${{ github.GITHUB_ACTOR }}"
+        echo "$step_lvl_vars"
+        echo "User more Variables from: " 
+        echo "https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables"
+
+
+
+          
