@@ -1,8 +1,13 @@
 
 name: This is my first workflow
 
-on: [push]
-
+on: 
+  push:     
+    branches:
+        - dev
+        - 'feature/*' # any feature branch
+        - 'feature/**' # any feature branch and children
+        
 jobs: 
   shell-command:
     runs-on: ubuntu-18.04 # def: /bin/bash
