@@ -19,4 +19,4 @@ jobs:
       - uses:
         with:
           name: ${{ env.name }}-name
-          path: ${{ github.workspace }}/artifact/**/*
+          path: ${{ github.workspace }}/artifact/**
