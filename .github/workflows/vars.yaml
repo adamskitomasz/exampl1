@@ -3,17 +3,17 @@ on:
   push:
 
 env:
-  my_fav_ubuntu: "20.04"
+  vars: "This is workspace/workflow lvl"
 
 jobs:
   debug_variables:    # Action
     env:
-      step_lvl_vars: "TEST123"
+      vars: "This is job lvl"
     runs-on: ubuntu-20.04
     steps:
     - name: check Variables   # steps
       run: |
-        echo ${{ env.my_fav_ubuntu }}
+        echo ${{ env.vars }}
         echo ${{ github.repository }}
         echo ${{ github.workflow }}
         echo $GITHUB_SHA
